@@ -1,0 +1,6 @@
+camper = []
+Estados = ["Preinscrito", "Inscrito", "Aprobado", "En_riesgo", "Filtrado"]
+
+
+trainer = []
+Disponibilidad = ["Mañana(6am-9am)", "Mañana(10am-1pm)", "Tarde(2pm-5pm)", "Tarde(6pm-10pm)"] 
