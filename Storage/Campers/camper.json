@@ -1,11 +1,85 @@
 [
     {
-        "Nombre": "Cailo",
+        "Nombre": "ca",
+        "Apellido": "ca",
+        "Identifiacion": 34,
+        "Direccion": "fgh",
+        "Edad": 54,
+        "Telefono": 456,
+        "Estado": 1
+    },
+    {
+        "Nombre": "ca",
+        "Apellido": "ac",
+        "Identifiacion": 346,
+        "Direccion": "dfg",
+        "Edad": 456,
+        "Telefono": 346,
+        "Estado": 2
+    },
+    {
+        "Nombre": "cam,",
         "Apellido": "asdas",
-        "Identifiacion": 34534,
-        "Direccion": "sdfsd",
-        "Edad": 34,
-        "Telefono": 235,
+        "Identifiacion": 346,
+        "Direccion": "wfsd",
+        "Edad": 345,
+        "Telefono": 345,
+        "Estado": 1
+    },
+    {
+        "Nombre": "cas",
+        "Apellido": "asd",
+        "Identifiacion": 4356,
+        "Direccion": "dfg",
+        "Edad": 56,
+        "Telefono": 56,
+        "Estado": 2
+    },
+    {
+        "Nombre": "asasf",
+        "Apellido": "sdfsdf",
+        "Identifiacion": 3453,
+        "Direccion": "sdgfg",
+        "Edad": 16,
+        "Acudiente": 3454564574,
+        "Telefono": 345345,
+        "Estado": 1
+    },
+    {
+        "Nombre": "casfasdf",
+        "Apellido": "sdgsdgsdg",
+        "Identifiacion": 4235345,
+        "Direccion": "sdgsdg",
+        "Edad": 16,
+        "idAcudiente": 34346,
+        "Telefono": [
+            {
+                "Fijo": 23534567457
+            },
+            {
+                "Fijo": 456457
+            },
+            {
+                "Celular": 43645674
+            },
+            {
+                "Celular": 3456346
+            }
+        ],
+        "Estado": 1
+    },
+    {
+        "Nombre": "Diana Caronila",
+        "Apellido": "Moreno Cardenas",
+        "Identifiacion": 1096701641,
+        "Direccion": "Floridablanca barrio panorama",
+        "Edad": 16,
+        "idAcudiente": 3253654457,
+        "Telefono": [
+            {
+                "Celular": 3174804270
+            }
+        ],
         "Estado": 1
     }
 ]

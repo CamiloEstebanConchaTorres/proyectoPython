@@ -7,5 +7,23 @@
         "Edad": 3,
         "Telefono": 34534,
         "Disponibilidad": 2
+    },
+    {
+        "Nombre": "cami",
+        "Apellido": "lola",
+        "Identifiacion": 235346,
+        "Direccion": "asfasf",
+        "Edad": 3,
+        "Telefono": 23545,
+        "Disponibilidad": 4
+    },
+    {
+        "Nombre": "casasf",
+        "Apellido": "asf",
+        "Identifiacion": 3464,
+        "Direccion": "dfg",
+        "Edad": 34,
+        "Telefono": 2256,
+        "Disponibilidad": 2
     }
 ]

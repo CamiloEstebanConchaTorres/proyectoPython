@@ -1,6 +1,6 @@
 # IMPORTACION DE LIBRERIAS Y OTRAS FUNCIONALIDADES DE PYTHON #
 from os import system
-
+import json
 
 # IMPORTACION DE LOS MODULOS PARA PODER INGRESAR #
 from Modulos.Asignaciones import Asignacion
@@ -10,6 +10,9 @@ from Modulos.Registro_trainers import Registro_Trainers
 from Modulos.Reportes import Reportes
 from Modulos.Rutas_entrenamiento import Rutas_Entrenamiento
 from Modulos.Areas_entrenamiento import Areas_Entrenamiento
+from Storage.Datos.datos import camper
+from Storage.Datos.datos import trainer
+
 
 # IMPORTACION DE VALIDACIONES DE LOS MODULOS #
 from Modulos.Validaciones.Validaciones import menuNoValid
@@ -43,11 +46,17 @@ while (bandera):
             system("clear")
             Evaluacion_Camper.menu()
         case 3:
-            system("clear")
-            Registro_Campers.menu()
+            with open("Storage/Campers/camper.json", "r") as f:
+                Registro_Campers.camper = json.loads(f.read())
+                f.close()
+                system("clear")
+                Registro_Campers.menu()
         case 4:
-            system("clear")
-            Registro_Trainers.menu()  
+            with open("Storage/trainers/trainer.json", "r") as f:
+                Registro_Trainers.trainer = json.loads(f.read())
+                f.close()
+                system("clear")
+                Registro_Trainers.menu() 
         case 5:
             system("clear")
             Reportes.menu()    
