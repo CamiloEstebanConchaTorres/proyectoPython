@@ -1,83 +1,35 @@
 [
     {
-        "Nombre": "ca",
-        "Apellido": "ca",
-        "Identifiacion": 34,
-        "Direccion": "fgh",
-        "Edad": 54,
-        "Telefono": 456,
-        "Estado": 1
-    },
-    {
-        "Nombre": "ca",
-        "Apellido": "ac",
-        "Identifiacion": 346,
-        "Direccion": "dfg",
-        "Edad": 456,
-        "Telefono": 346,
-        "Estado": 2
-    },
-    {
-        "Nombre": "cam,",
-        "Apellido": "asdas",
-        "Identifiacion": 346,
-        "Direccion": "wfsd",
-        "Edad": 345,
-        "Telefono": 345,
-        "Estado": 1
-    },
-    {
-        "Nombre": "cas",
-        "Apellido": "asd",
-        "Identifiacion": 4356,
-        "Direccion": "dfg",
-        "Edad": 56,
-        "Telefono": 56,
-        "Estado": 2
-    },
-    {
-        "Nombre": "asasf",
-        "Apellido": "sdfsdf",
-        "Identifiacion": 3453,
-        "Direccion": "sdgfg",
+        "Nombre": "maria paula",
+        "Apellido": "perez avendano",
+        "Identifiacion": 1052834784,
+        "Direccion": "Bucaramanga",
         "Edad": 16,
-        "Acudiente": 3454564574,
-        "Telefono": 345345,
-        "Estado": 1
-    },
-    {
-        "Nombre": "casfasdf",
-        "Apellido": "sdgsdgsdg",
-        "Identifiacion": 4235345,
-        "Direccion": "sdgsdg",
-        "Edad": 16,
-        "idAcudiente": 34346,
-        "Telefono": [
+        "NombreAcudiente": "Martha elizabeth perez puerto",
+        "NumeroAcudiene": 1052867354,
+        "idAcudiente": 1065274733,
+        "TelefonoCamper": [
             {
-                "Fijo": 23534567457
+                "Fijo": 76597877
             },
             {
-                "Fijo": 456457
-            },
-            {
-                "Celular": 43645674
-            },
-            {
-                "Celular": 3456346
+                "Celular": 3123456789
             }
         ],
         "Estado": 1
     },
     {
-        "Nombre": "Diana Caronila",
-        "Apellido": "Moreno Cardenas",
-        "Identifiacion": 1096701641,
-        "Direccion": "Floridablanca barrio panorama",
-        "Edad": 16,
-        "idAcudiente": 3253654457,
-        "Telefono": [
+        "Nombre": "Jhon Sebastian",
+        "Apellido": "torres",
+        "Identificacion": 1052836469,
+        "Direccion": "bucaramanga",
+        "Edad": 18,
+        "NombreAcudiente": "",
+        "NumeroAcudiente": "",
+        "idAcudiente": "",
+        "TelefonoCamper": [
             {
-                "Celular": 3174804270
+                "Celular": 3107493594
             }
         ],
         "Estado": 1

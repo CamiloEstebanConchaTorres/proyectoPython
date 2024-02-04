@@ -43,8 +43,11 @@ while (bandera):
             system("clear")
             Asignacion.menu()
         case 2:
-            system("clear")
-            Evaluacion_Camper.menu()
+            with open("Storage/Campers/camper.json", "r") as f:
+                Evaluacion_Camper.camper = json.loads(f.read())
+                f.close()
+                system("clear")
+                Evaluacion_Camper.menu()
         case 3:
             with open("Storage/Campers/camper.json", "r") as f:
                 Registro_Campers.camper = json.loads(f.read())

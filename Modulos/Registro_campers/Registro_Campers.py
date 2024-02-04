@@ -11,25 +11,32 @@ from Modulos.Validaciones.Validaciones import menuNoValid
 
 
 def save():
-    edad = int(input("ingrese la edad del camper"))
+    edad = int(input("ingrese la edad del camper \n"))
+    N_Acudiente = ""
+    Numero_Acu = ""
     Acudiente = ""
     if edad <=15:
-        return print("No puede ingresar a Campuslands, ya que no cumple con la edad necesaria \n")
+        return print("! No puede ingresar a Campuslands, ya que no cumple con la edad necesaria ! \n")
     elif edad >=16 and edad <=17:
-        Acudiente = (int(input("Porfavor ingrese el numero de identificacion de su acudiente \n")))
+        print(" ! CAMPER MENOR DE EDAD !")
+        N_Acudiente = input("Porfavor ingrese el Nombre del acudiente \n")
+        Numero_Acu =  (int(input("Porfavor ingrese el Numero del acudiente \n")))
+        Acudiente = (int(input("Porfavor ingrese el numero de identificacion del acudiente \n")))
     info = {
         "Nombre": input("Ingrese los nombres del camper\n"),
         "Apellido": input("Ingrese los apellidos del camper\n"),
-        "Identifiacion": int(input("Ingrese el numero de identificacion del camper\n")),
+        "Identificacion": int(input("Ingrese el numero de identificacion del camper\n")),
         "Direccion": input("Ingrese la direccion del camper\n"),
         "Edad": edad,
+        "NombreAcudiente": N_Acudiente,
+        "NumeroAcudiente": Numero_Acu,
         "idAcudiente": Acudiente,
-        "Telefono":[
+        "TelefonoCamper":[
             {
-            f"{'Fijo' if(int(input('1. Fijo  0. Celular:  '))) else 'Celular'}":
+            f"{'Fijo' if(int(input('1. Numero Fijo  0. Numero de Celular:  '))) else 'Celular'}":
             int(input(f'Numero de contacto {x+1}: '))
             }
-            for x in range(int(input("Ingrese la cantidad de telefonos que tiene:  ")))
+            for x in range(int(input("Cuantos numeros de telefono tiene el camper?:  ")))
         ],          
         "Estado": int(input("Asigne el Estado del camper:\n\t"+"\t".join([f"{Estados.index(i)+1}. {i}\n" for i in (Estados)]))),
 
