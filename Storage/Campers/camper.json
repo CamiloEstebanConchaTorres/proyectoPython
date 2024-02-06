@@ -1,40 +1,30 @@
 [
     {
-        "Nombre": "maria paula",
-        "Apellido": "perez avendano",
-        "Identifiacion": 1052834784,
-        "Direccion": "Bucaramanga",
-        "Edad": 16,
-        "NombreAcudiente": "Martha elizabeth perez puerto",
-        "NumeroAcudiene": 1052867354,
-        "idAcudiente": 1065274733,
-        "TelefonoCamper": [
-            {
-                "Fijo": 76597877
-            },
-            {
-                "Celular": 3123456789
-            }
-        ],
-        "Estado": 1
-    },
-    {
-        "Nombre": "Jhon Sebastian",
-        "Apellido": "torres",
-        "Identificacion": 1052836469,
-        "Direccion": "bucaramanga",
+        "Nombre": "Camilo Esteban",
+        "Apellido": "Concha Torres",
+        "Identificacion": 105232346,
+        "Direccion": "bucara",
         "Edad": 18,
         "NombreAcudiente": "",
         "NumeroAcudiente": "",
         "idAcudiente": "",
         "TelefonoCamper": [
             {
-                "Celular": 3107493594
+                "Fijo": 432543
             }
         ],
-        "Estado": 1
+        "Estado": 4
     },
     {
-        "Estado": 2
+        "Nombre": "perra martina",
+        "Apellido": "marihuanera",
+        "Identificacion": 43645,
+        "Direccion": "dfgdfg",
+        "Edad": 19,
+        "NombreAcudiente": "",
+        "NumeroAcudiente": "",
+        "idAcudiente": "",
+        "TelefonoCamper": [],
+        "Estado": 4
     }
 ]
