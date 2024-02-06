@@ -56,7 +56,7 @@ ________________________
                  datos = json.dumps(camper, indent=4)
                  f.write(datos)
                  f.close()
-                 return print("! CAMPER ASCENDIDO HA INSCRITO")            
+                 return print("! CAMPER ASCENDIDO HA INSCRITOS")            
         elif (opc == 2):
             bandera = False
         elif (opc == 3):
