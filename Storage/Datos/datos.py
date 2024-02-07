@@ -1,9 +1,9 @@
 camper = []
 Estados = ["Preinscrito", "Inscrito", "Aprobado", "En_riesgo", "Filtrado"]
 Pruebas = ["Prueba Preinscrito", "Prueba Inscrito", "Primer Filtro"]
-Rutas = ["Ruta NodeJS", "Ruta Java", "Ruta NetCore"]
+Rutas = []
 Temas = []
-
+Areas = []
 
 
 trainer = []

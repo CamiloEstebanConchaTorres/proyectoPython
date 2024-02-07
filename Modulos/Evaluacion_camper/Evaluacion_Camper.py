@@ -19,6 +19,22 @@ def search():
         *  Evaluacion del Camper  *
         ***************************
         """)
+        for i,val in enumerate(camper):
+            print(f"""
+________________________
+Codigo: {i}
+Nombre: {val.get('Nombre')}
+Apellido: {val.get('Apellido')}
+Identificacion: {val.get('Identificacion')}
+Direccion: {val.get('Direccion')}
+Edad: {val.get('Edad')}
+NombreAcudiente: {val.get('NombreAcudiente')}
+NumeroAcudiente: {val.get('NumeroAcudiente')}
+idAcudiente: {val.get('idAcudiente')}
+TelefonoCamper: {val.get('TelefonoCamper')}
+Estado: {val.get('Estado')}
+________________________
+""")
         Codigo = int(input("Ingrese el numero del camper al que desea asignar notas \n"))
         print(f"""
 ________________________

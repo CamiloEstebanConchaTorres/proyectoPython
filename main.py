@@ -31,8 +31,6 @@ def menu():
     print("\t3. Registro del camper")
     print("\t4. Registro del Trainer")
     print("\t5. Reportes(FILTROS)")
-    print("\t6. Rutas de entrenamiento")
-    print("\t7. Areas de entrenamiento")
     print("\t0. Salir \n")
     
 bandera = True
@@ -41,8 +39,20 @@ while (bandera):
     opc = int(input("ingrese el numero del modulo al que desea ingresar \n"))
     match(opc):
         case 1:
-            system("clear")
-            Asignacion.menu()
+            with open("Storage/Rutas_entrenamiento/rutas.json", "r") as f:
+                Asignacion.Rutas = json.loads(f.read())
+                f.close()
+            with open("Storage/Rutas_entrenamiento/temas.json", "r") as f:
+                Asignacion.Temas = json.loads(f.read())
+                f.close()
+            with open("Storage/Areas_entrenamiento/areas.json", "r") as f:
+                Asignacion.Areas = json.loads(f.read())
+                f.close()
+            with open("Storage/trainers/trainer.json", "r") as f:
+                Asignacion.trainer = json.loads(f.read())
+                f.close()                    
+                system("clear")
+                Asignacion.menu()
         case 2:
             with open("Storage/Campers/camper.json", "r") as f:
                 Evaluacion_Camper.camper = json.loads(f.read())
@@ -63,13 +73,7 @@ while (bandera):
                 Registro_Trainers.menu() 
         case 5:
             system("clear")
-            Reportes.menu()    
-        case 6:
-            system("clear")
-            Rutas_Entrenamiento.menu()
-        case 7:
-            system("clear")
-            Areas_Entrenamiento.menu()                         
+            Reportes.menu()                           
         case 0:
             system("clear")
             bandera = False

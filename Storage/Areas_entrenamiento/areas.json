@@ -1,0 +1,17 @@
+[
+    {
+        "Nombre": "Apolo",
+        "Ruta": "Apolo",
+        "Trainer": 2
+    },
+    {
+        "Nombre": "Sputnik",
+        "Ruta": "Sputnik",
+        "Trainer": 1
+    },
+    {
+        "Nombre": "Artemis",
+        "Ruta": "Artemis",
+        "Trainer": 3
+    }
+]
