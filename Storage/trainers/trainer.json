@@ -3,10 +3,10 @@
         "Nombre": "Miguel s",
         "Apellido": "pedraza",
         "Identifiacion": 235345,
-        "Direccion": "safsdf",
         "Edad": 3,
         "Telefono": 34534,
-        "Disponibilidad": 2
+        "Disponibilidad": 2,
+        "Campers": 2
     },
     {
         "Nombre": "cami",
@@ -15,15 +15,16 @@
         "Direccion": "asfasf",
         "Edad": 3,
         "Telefono": 23545,
-        "Disponibilidad": 4
+        "Disponibilidad": 4,
+        "Campers": ""
     },
     {
         "Nombre": "casasf",
         "Apellido": "asf",
         "Identifiacion": 3464,
-        "Direccion": "dfg",
         "Edad": 34,
         "Telefono": 2256,
-        "Disponibilidad": 2
+        "Disponibilidad": 2,
+        "Campers": 1
     }
 ]

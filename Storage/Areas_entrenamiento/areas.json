@@ -2,16 +2,19 @@
     {
         "Nombre": "Apolo",
         "Ruta": "Apolo",
-        "Trainer": 2
+        "Trainer": 2,
+        "Campers": 2
     },
     {
         "Nombre": "Sputnik",
         "Ruta": "Sputnik",
-        "Trainer": 1
+        "Trainer": 1,
+        "Campers": 1
     },
     {
         "Nombre": "Artemis",
         "Ruta": "Artemis",
-        "Trainer": 3
+        "Trainer": 3,
+        "Camper": ""
     }
 ]

@@ -18,7 +18,8 @@ def save():
         "Direccion": input("Ingrese la direccion del Trainer\n"),
         "Edad": int(input("Ingrese la edad del Trainer\n")),
         "Telefono": int(input("Ingrese el Telefono del Trainer\n")),
-        "Disponibilidad": int(input("Que disponibilidad tiene el trainer?:\n\t"+"\t".join([f"{Disponibilidad.index(i)+1}. {i}\n" for i in (Disponibilidad)])))
+        "Disponibilidad": int(input("Que disponibilidad tiene el trainer?:\n\t"+"\t".join([f"{Disponibilidad.index(i)+1}. {i}\n" for i in (Disponibilidad)]))),
+        "Campers": ""
     }
     trainer.append(info)
     with open("Storage/trainers/trainer.json", "w") as f:

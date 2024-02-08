@@ -50,7 +50,10 @@ while (bandera):
                 f.close()
             with open("Storage/trainers/trainer.json", "r") as f:
                 Asignacion.trainer = json.loads(f.read())
-                f.close()                    
+                f.close()
+            with open("Storage/Campers/camper.json", "r") as f:
+                Asignacion.camper = json.loads(f.read())
+                f.close()                                    
                 system("clear")
                 Asignacion.menu()
         case 2:
