@@ -28,8 +28,8 @@ BIENVENIDO AL SISTEMA DE SEGUIMIENTO ACADEMICO DE CAMPUSLANDS
 def menu():
     print("\t1. Asignaciones")
     print("\t2. Evaluacion del camper")
-    print("\t3. Registro del camper")
-    print("\t4. Registro del Trainer")
+    print("\t3. Registro/Actualizacion del camper")
+    print("\t4. Registro/Actualizacion del Trainer")
     print("\t5. Reportes(FILTROS)")
     print("\t0. Salir \n")
     
@@ -75,10 +75,25 @@ while (bandera):
                 system("clear")
                 Registro_Trainers.menu() 
         case 5:
-            system("clear")
-            Reportes.menu()                           
+            with open("Storage/trainers/trainer.json", "r") as f:
+                Reportes.trainer = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/camper.json", "r") as f:
+                Reportes.camper = json.loads(f.read())
+                f.close()
+            with open("Storage/Areas_entrenamiento/areas.json", "r") as f:
+                Reportes.Areas = json.loads(f.read())
+                f.close()
+            with open("Storage/Rutas_entrenamiento/rutas.json", "r") as f:
+                Reportes.Rutas = json.loads(f.read())
+                f.close()
+            with open("Storage/Rutas_entrenamiento/temas.json", "r") as f:
+                Reportes.Temas = json.loads(f.read())
+                f.close()                                         
+                system("clear")
+                Reportes.menu()                           
         case 0:
             system("clear")
-            bandera = False
+            bandera = False, system("clear")
         case _:
             print(menuNoValid(opc))

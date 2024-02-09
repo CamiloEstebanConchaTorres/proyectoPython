@@ -102,7 +102,5 @@ CRUD del modulo de Evaluacion del camper
         opc = int(input("seleccione su opcion \n"))
         match(opc):
             case 1: search()
-            case 2:
-                system("clear")
-                bandera = False
+            case 0: bandera = False, system("clear")
             case _: print(menuNoValid(opc))

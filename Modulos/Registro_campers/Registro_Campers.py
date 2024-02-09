@@ -47,7 +47,50 @@ def save():
         f.write(datos)
         f.close()
     return "Sucessfully Camper"
-      
+
+def Actualizar():
+    bandera=True
+    while (bandera):
+        system("clear")
+        print("""
+        ***************************
+        * Acualizacion del camper *
+        ***************************
+        """)
+        codigo = int(input("Ingrese el codigo del camper que desea actualizar \n"))
+        print(f"""
+________________________
+Codigo: {codigo}
+Nombre: {camper[codigo].get('Nombre')}
+Apellido: {camper[codigo].get('Apellido')}
+Identificacion: {camper[codigo].get('Identificacion')}
+Direccion: {camper[codigo].get('Direccion')}
+Edad: {camper[codigo].get('Edad')}
+________________________
+        """)
+        print("¿Este es el camper que deseas actualizar? \n")
+        print("1. Si")
+        print("2. No")
+        print("3. Salir")
+        opc = int(input())
+        if(opc == 1):
+            info = {
+                "Nombre": input("Ingrese el nombre del camper\n"),
+                "Apellido": input("Ingrese el apellido del camper\n"),
+                "Identificacion": int(input("Ingrese la Identificacion del camper\n")),
+                "Direccion": int(input("Ingrese la Direccion del camper\n")),
+                "Edad": int(input("Ingrese la Edad del camper\n")),
+            }
+            camper[codigo] = info
+            with open("Storage/Campers/camper.json", "w") as f:
+                data = json.dumps(camper, indent=4)
+                f.write(data)
+                f.close()
+            bandera == False
+        elif(opc == 3):
+            bandera == False
+    return "Actualizado"
+
 def menu ():
     print("""******************************
 SISTEMA DE CREACION DE CAMPERS
@@ -56,10 +99,12 @@ SISTEMA DE CREACION DE CAMPERS
     bandera=True
     while (bandera):
         print("\t1. Crear camper")
+        print("\t2. Actualizar camper")
         print("\t0. Atras \n")
         opc = int(input("Seleccione su Opcion: \n"))
         match(opc):
             case 1: save()
+            case 2: Actualizar()
             case 0:
                 system("clear")
                 bandera = False
