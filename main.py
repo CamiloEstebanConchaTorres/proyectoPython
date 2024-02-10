@@ -15,6 +15,8 @@ from Storage.Datos.datos import trainer
 
 
 
+
+
 # IMPORTACION DE VALIDACIONES DE LOS MODULOS #
 from Modulos.Validaciones.Validaciones import menuNoValid
 
@@ -53,19 +55,34 @@ while (bandera):
                 f.close()
             with open("Storage/Campers/camper.json", "r") as f:
                 Asignacion.camper = json.loads(f.read())
-                f.close()                                    
+                f.close()                                          
                 system("clear")
                 Asignacion.menu()
         case 2:
             with open("Storage/Campers/camper.json", "r") as f:
                 Evaluacion_Camper.camper = json.loads(f.read())
                 f.close()
+            with open("Storage/Campers/Inscritos.json", "r") as f:
+                Evaluacion_Camper.Inscrito = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/Aprobados.json", "r") as f:
+                Evaluacion_Camper.Aprobado = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/En_riesgo.json", "r") as f:
+                Evaluacion_Camper.En_riesgo = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/Filtrados.json", "r") as f:
+                Evaluacion_Camper.Filtrado = json.loads(f.read())
+                f.close()          
                 system("clear")
                 Evaluacion_Camper.menu()
         case 3:
             with open("Storage/Campers/camper.json", "r") as f:
                 Registro_Campers.camper = json.loads(f.read())
                 f.close()
+            with open("Storage/Campers/Preinscritos.json", "r") as f:
+                Registro_Campers.Preinscritos = json.loads(f.read())
+                f.close()  
                 system("clear")
                 Registro_Campers.menu()
         case 4:
@@ -89,7 +106,22 @@ while (bandera):
                 f.close()
             with open("Storage/Rutas_entrenamiento/temas.json", "r") as f:
                 Reportes.Temas = json.loads(f.read())
-                f.close()                                         
+                f.close()
+            with open("Storage/Campers/Preinscritos.json", "r") as f:
+                Reportes.Preinscritos = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/Inscritos.json", "r") as f:
+                Reportes.Inscrito = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/Aprobados.json", "r") as f:
+                Reportes.Aprobado = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/En_riesgo.json", "r") as f:
+                Reportes.En_riesgo = json.loads(f.read())
+                f.close()
+            with open("Storage/Campers/Filtrados.json", "r") as f:
+                Reportes.Filtrado = json.loads(f.read())
+                f.close()                                                        
                 system("clear")
                 Reportes.menu()                           
         case 0:

@@ -1,0 +1,18 @@
+[
+    {
+        "Nombre": "Julian David",
+        "Apellido": "Perez Gomez",
+        "Identificacion": 1052374856,
+        "Direccion": "Floridablanca",
+        "Edad": 18,
+        "NombreAcudiente": "",
+        "NumeroAcudiente": "",
+        "idAcudiente": "",
+        "TelefonoCamper": [
+            {
+                "Celular": 3104567834
+            }
+        ],
+        "Estado": 3
+    }
+]

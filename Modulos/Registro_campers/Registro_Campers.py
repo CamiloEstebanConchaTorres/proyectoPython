@@ -6,6 +6,7 @@ from os import system
 # IMPORTACION DE LOS MODULOS PARA PODER INGRESAR #
 from Storage.Datos.datos import camper
 from Storage.Datos.datos import Estados
+from Storage.Datos.datos import Preinscritos
 from Modulos.Validaciones.Validaciones import menuNoValid
 
 
@@ -41,11 +42,17 @@ def save():
         "Estado": int(input("Asigne el Estado del camper:\n\t"+"\t".join([f"{Estados.index(i)+1}. {i}\n" for i in (Estados)]))),
 
     }
-    camper.append(info)
-    with open("Storage/Campers/camper.json", "w") as f:
-        datos = json.dumps(camper, indent=4)
-        f.write(datos)
-        f.close()
+    if info["Estado"] == 1:
+        camper.append(info)
+        with open("Storage/Campers/camper.json", "w") as f:
+            datos = json.dumps(camper, indent=4)
+            f.write(datos)
+            f.close()
+        Preinscritos.append(info)
+        with open("Storage/Campers/Preinscritos.json", "w") as f:
+            datos = json.dumps(Preinscritos, indent=4)
+            f.write(datos)
+            f.close()
     return "Sucessfully Camper"
 
 def Actualizar():

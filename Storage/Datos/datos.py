@@ -4,6 +4,12 @@ Pruebas = ["Prueba Preinscrito", "Prueba Inscrito", "Primer Filtro"]
 Rutas = []
 Temas = []
 Areas = []
+En_riesgo = []
+Inscrito = []
+Aprobado = []
+Filtrado = []
+Preinscritos = []
+
 
 
 trainer = []

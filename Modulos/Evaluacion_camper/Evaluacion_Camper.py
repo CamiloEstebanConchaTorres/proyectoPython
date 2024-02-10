@@ -6,6 +6,10 @@ from os import system
 from Modulos.Validaciones.Validaciones import menuNoValid
 from Storage.Datos.datos import camper
 from Storage.Datos.datos import Estados
+from Storage.Datos.datos import En_riesgo
+from Storage.Datos.datos import Inscrito
+from Storage.Datos.datos import Aprobado
+from Storage.Datos.datos import Filtrado
 
 
 
@@ -61,7 +65,50 @@ ________________________
             Nota_Practica = int(input("ingrese el valor de la nota practica \n"))
             Promedio = (Nota_teorica + Nota_Practica) / 2
             if Promedio <= 59:
-                return  print("! LO SENTIMOS EL CAMPER NO HA SUPERADO LA PRUEBA ! \n")
+                print("! LO SENTIMOS EL CAMPER NO HA SUPERADO LA PRUEBA ! \n")
+                info2 = {
+                    "Nombre": camper[Codigo].get('Nombre'),
+                    "Apellido": camper[Codigo].get('Apellido'),
+                    "Identificacion": camper[Codigo].get('Identificacion'),
+                    "Direccion": camper[Codigo].get('Direccion'),
+                    "Edad": camper[Codigo].get('Edad'),
+                    "NombreAcudiente": camper[Codigo].get('NombreAcudiente'),
+                    "NumeroAcudiente": camper[Codigo].get('NumeroAcudiente'),
+                    "idAcudiente": camper[Codigo].get('idAcudiente'),
+                    "TelefonoCamper": camper[Codigo].get('TelefonoCamper'),
+                    "Estado": int(input("Asigne el nuevo estado del camper:\n\t"+"\t".join([f"{Estados.index(i)+1}. {i}\n" for i in (Estados)])))
+                }
+                if info2["Estado"] == 4:
+                    En_riesgo.append(info2)
+                    with open("Storage/Campers/En_riesgo.json", "w") as f:
+                        datos = json.dumps(En_riesgo, indent=4)
+                        f.write(datos)
+                        f.close()
+                else:
+                    if info2["Estado"] == 3:
+                        Aprobado.append(info2)
+                        with open("Storage/Campers/Aprobados.json", "w") as f:
+                            datos = json.dumps(Aprobado, indent=4)
+                            f.write(datos)
+                            f.close()
+                    else:
+                        if info2["Estado"] == 2:
+                            Inscrito.append(info2)
+                            with open("Storage/Campers/Inscritos.json", "w") as f:
+                                datos = json.dumps(Inscrito, indent=4)
+                                f.write(datos)
+                                f.close()
+                        else:
+                            if info2["Estado"] == 1:
+                                print("EL CAMPER NO SUPERO LA PRUEBA Y SE QUEDA COMO PREINSCRITO PARA NUEVAS PRUEBAS")
+                            else:
+                                if info2["Estado"] == 5:
+                                    Filtrado.append(info2)
+                                    with open("Storage/Campers/Filtrados.json", "w") as f:
+                                        datos = json.dumps(Filtrado, indent=4)
+                                        f.write(datos)
+                                        f.close()
+                return "Sucessfully Camper"
             else:
                 print("! EL CAMPER HA SUPERADO LA PRUEBA !")
                 info = {
@@ -76,12 +123,37 @@ ________________________
                     "TelefonoCamper": camper[Codigo].get('TelefonoCamper'),
                     "Estado": int(input("Asigne el nuevo estado del camper:\n\t"+"\t".join([f"{Estados.index(i)+1}. {i}\n" for i in (Estados)])))            
                 }
-                camper[Codigo] = info
-                with open("Storage/Campers/camper.json", "w+") as f: 
-                 datos = json.dumps(camper, indent=4)
-                 f.write(datos)
-                 f.close()
-                 return print(f"Camper successfully ")            
+                if info["Estado"] == 4:
+                    En_riesgo.append(info)
+                    with open("Storage/Campers/En_riesgo.json", "w") as f:
+                        datos = json.dumps(En_riesgo, indent=4)
+                        f.write(datos)
+                        f.close()
+                else:
+                    if info["Estado"] == 3:
+                        Aprobado.append(info)
+                        with open("Storage/Campers/Aprobados.json", "w") as f:
+                            datos = json.dumps(Aprobado, indent=4)
+                            f.write(datos)
+                            f.close()
+                    else:
+                        if info["Estado"] == 2:
+                            Inscrito.append(info)
+                            with open("Storage/Campers/Inscritos.json", "w") as f:
+                                datos = json.dumps(Inscrito, indent=4)
+                                f.write(datos)
+                                f.close()
+                        else:
+                            if info["Estado"] == 1:
+                                print("EL CAMPER NO SUPERO LA PRUEBA Y SE QUEDA COMO PREINSCRITO PARA NUEVAS PRUEBAS")
+                            else:
+                                if info["Estado"] == 5:
+                                    Filtrado.append(info)
+                                    with open("Storage/Campers/Filtrados.json", "w") as f:
+                                        datos = json.dumps(Filtrado, indent=4)
+                                        f.write(datos)
+                                        f.close()
+                return print(f"Camper successfully ")            
         elif (opc == 2):
             bandera = False
         elif (opc == 3):
