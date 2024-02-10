@@ -2,4 +2,4 @@
 
 EVIDENCIA
 
-![](https://github.com/CamiloEstebanConchaTorres/proyectoPython/blob/main/img/1.jpg)
+![](https://github.com/CamiloEstebanConchaTorres/proyectoPython/blob/main/img/1.jpeg)
