@@ -1,0 +1,4 @@
+generos = []
+actores = []
+formatos = []
+peliculas = []

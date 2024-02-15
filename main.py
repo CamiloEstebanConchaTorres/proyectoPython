@@ -3,18 +3,12 @@ from os import system
 import json
 
 # IMPORTACION DE LOS MODULOS PARA PODER INGRESAR #
-from Modulos.Asignaciones import Asignacion
-from Modulos.Evaluacion_camper import Evaluacion_Camper
-from Modulos.Registro_campers import Registro_Campers
-from Modulos.Registro_trainers import Registro_Trainers
-from Modulos.Reportes import Reportes
-from Modulos.Rutas_entrenamiento import Rutas_Entrenamiento
-from Modulos.Areas_entrenamiento import Areas_Entrenamiento
-from Storage.Datos.datos import camper
-from Storage.Datos.datos import trainer
+from Modulos.Administrador_Generos import Administrador_generos
+from Modulos.Administador_Actores import Administrador_actores
+from Modulos.Administrar_Formatos import Administrar_formatos
+from Modulos.Gestor_Peliculas import Gestor_peliculas
 
-
-
+from Storage.datos import generos
 
 
 # IMPORTACION DE VALIDACIONES DE LOS MODULOS #
@@ -22,17 +16,33 @@ from Modulos.Validaciones.Validaciones import menuNoValid
 
 
 
-print("""*************************************************************
-BIENVENIDO AL SISTEMA DE SEGUIMIENTO ACADEMICO DE CAMPUSLANDS
-*************************************************************
-        CRUD de CAMPUSLANDS
+import Modulos.Actores as Actores
+import Modulos.Formatos as Formatos
+import Modulos.Generos as Generos
+import Modulos.Peliculas as Peliculas
+
+from Storage.datos import generos, actores, formatos, peliculas
+
+actores = Actores.carga()
+formatos = Formatos.carga()
+generos = Generos.carga()
+peliculas = Peliculas.carga()
+
+
+
+
+
+print("""***************************************
+SISTEMA GESTOR DE PELICULAS BLOCKBUSTER
+***************************************
+        CRUD de BLOCKBUSTER
 """)
 def menu():
-    print("\t1. Asignaciones")
-    print("\t2. Evaluacion del camper")
-    print("\t3. Registro/Actualizacion del camper")
-    print("\t4. Registro/Actualizacion del Trainer")
-    print("\t5. Reportes(FILTROS)")
+    print("\t1. Administrador de Generos")
+    print("\t2. Administrador de Actores")
+    print("\t3. Administrador de Formatos")
+    print("\t4. Crear Pelicula")
+    print("\t5. Gestionar Peliculas")
     print("\t0. Salir \n")
     
 bandera = True
@@ -40,92 +50,57 @@ while (bandera):
     menu()
     opc = int(input("ingrese el numero del modulo al que desea ingresar \n"))
     match(opc):
-        case 1:
-            with open("Storage/Rutas_entrenamiento/rutas.json", "r") as f:
-                Asignacion.Rutas = json.loads(f.read())
-                f.close()
-            with open("Storage/Rutas_entrenamiento/temas.json", "r") as f:
-                Asignacion.Temas = json.loads(f.read())
-                f.close()
-            with open("Storage/Areas_entrenamiento/areas.json", "r") as f:
-                Asignacion.Areas = json.loads(f.read())
-                f.close()
-            with open("Storage/trainers/trainer.json", "r") as f:
-                Asignacion.trainer = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/camper.json", "r") as f:
-                Asignacion.camper = json.loads(f.read())
-                f.close()                                          
+        case 1: 
+            with open("Storage/generos.json", "r") as f:                                                             
+                Administrador_generos.generos = json.loads(f.read())
+                f.close()      
                 system("clear")
-                Asignacion.menu()
-        case 2:
-            with open("Storage/Campers/camper.json", "r") as f:
-                Evaluacion_Camper.camper = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Inscritos.json", "r") as f:
-                Evaluacion_Camper.Inscrito = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Aprobados.json", "r") as f:
-                Evaluacion_Camper.Aprobado = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/En_riesgo.json", "r") as f:
-                Evaluacion_Camper.En_riesgo = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Filtrados.json", "r") as f:
-                Evaluacion_Camper.Filtrado = json.loads(f.read())
-                f.close()          
+                Administrador_generos.menu()
+        case 2: 
+            with open("Storage/actores.json", "r") as f:                                                             
+                Administrador_actores.actores = json.loads(f.read())
+                f.close()      
                 system("clear")
-                Evaluacion_Camper.menu()
-        case 3:
-            with open("Storage/Campers/camper.json", "r") as f:
-                Registro_Campers.camper = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Preinscritos.json", "r") as f:
-                Registro_Campers.Preinscritos = json.loads(f.read())
-                f.close()  
+                Administrador_actores.menu()
+        case 3: 
+            with open("Storage/formatos.json", "r") as f:                                                             
+                Administrar_formatos.formatos = json.loads(f.read())
+                f.close()      
                 system("clear")
-                Registro_Campers.menu()
+                Administrar_formatos.menu()    
         case 4:
-            with open("Storage/trainers/trainer.json", "r") as f:
-                Registro_Trainers.trainer = json.loads(f.read())
+            Pelis = {
+            "Peliculas": f"P0{len(peliculas)+1}",
+            "id": f"P0{len(peliculas)+1}",
+            "Nombre": input("ingrese el nombre de la pelicula \n"),
+            "Duracion": input(input("ingrese la duracion de la pelicula ej.(tres horas) \n")),
+            "Sinopsis": input("ingrese la sinpsis de la pelicula \n"),
+            "_Generos": Generos.carga(),
+            "_Actores": Actores.carga(),
+            "_Formato": Formatos.carga()
+        }
+            peliculas.append(Pelis)
+            path = "Storage/"
+            with open(path+"peliculas.json", "w") as f:
+                f.write(json.dumps(peliculas, indent=4))
                 f.close()
-                system("clear")
-                Registro_Trainers.menu() 
         case 5:
-            with open("Storage/trainers/trainer.json", "r") as f:
-                Reportes.trainer = json.loads(f.read())
+            with open("Storage/peliculas.json", "r") as f:                                                             
+                Gestor_peliculas.peliculas = json.loads(f.read())
                 f.close()
-            with open("Storage/Campers/camper.json", "r") as f:
-                Reportes.camper = json.loads(f.read())
-                f.close()
-            with open("Storage/Areas_entrenamiento/areas.json", "r") as f:
-                Reportes.Areas = json.loads(f.read())
-                f.close()
-            with open("Storage/Rutas_entrenamiento/rutas.json", "r") as f:
-                Reportes.Rutas = json.loads(f.read())
-                f.close()
-            with open("Storage/Rutas_entrenamiento/temas.json", "r") as f:
-                Reportes.Temas = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Preinscritos.json", "r") as f:
-                Reportes.Preinscritos = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Inscritos.json", "r") as f:
-                Reportes.Inscrito = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Aprobados.json", "r") as f:
-                Reportes.Aprobado = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/En_riesgo.json", "r") as f:
-                Reportes.En_riesgo = json.loads(f.read())
-                f.close()
-            with open("Storage/Campers/Filtrados.json", "r") as f:
-                Reportes.Filtrado = json.loads(f.read())
-                f.close()                                                        
+            with open("Storage/actores.json", "r") as f:                                                             
+                Gestor_peliculas.actores = json.loads(f.read())
+                f.close()      
                 system("clear")
-                Reportes.menu()                           
+                Gestor_peliculas.menu()
         case 0:
             system("clear")
-            bandera = False, system("clear")
+            bandera = False
         case _:
             print(menuNoValid(opc))
+
+def plantilla(data):
+    lista = []
+    for i,val in enumerate(data):
+        lista.append(f"\n\t\t{i+1} - {val}")
+    return "".join(lista)
